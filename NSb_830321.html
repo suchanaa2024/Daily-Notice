@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body, table, th, td, h2, div, span, a, strong {
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    .notice-table {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 12px;
+      table-layout: fixed;
+      width: 100%;
+      max-width: 100%;
+    }
+    .notice-table th, .notice-table td {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 12px;
+    }
+    .notice-table-standard .col-sn { width: 4%; }
+    .notice-table-standard .col-office { width: 16%; }
+    .notice-table-standard .col-category { width: 9%; }
+    .notice-table-standard .col-newspaper { width: 9%; }
+    .notice-table-standard .col-contract { width: 27%; }
+    .notice-table-standard .col-link { width: 5%; }
+    .notice-table-standard .col-bidders { width: 18%; }
+    .notice-table-standard .col-amount { width: 12%; }
+    .notice-table-normal .col-sn { width: 5%; }
+    .notice-table-normal .col-office { width: 20%; }
+    .notice-table-normal .col-category { width: 11%; }
+    .notice-table-normal .col-newspaper { width: 11%; }
+    .notice-table-normal .col-contract { width: 43%; }
+    .notice-table-normal .col-link { width: 10%; }
+    .amount-value { white-space: nowrap; display: inline-block; }
+    .amount-note { white-space: normal; display: block; line-height: 1.2; margin-top: 2px; }
+    .table-scroll-wrap-standard {
+      width: 100%;
+      overflow-x: visible;
+    }
+    .table-scroll-wrap-normal {
+      width: 100%;
+      overflow-x: visible;
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px !important; font-size: 12px !important; }
+      .date-line { font-size: 12px !important; }
+      .subcategory-heading { font-size: 15px !important; }
+      .notice-table { font-size: 10px !important; }
+      .notice-table th, .notice-table td {
+        font-size: 10px !important;
+        padding: 4px 2px !important;
+        line-height: 1.35 !important;
+      }
+      .notice-table-normal {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+      }
+      .table-scroll-wrap-normal { overflow-x: visible !important; }
+      .table-scroll-wrap-standard {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+      .notice-table-standard {
+        width: calc(100vw - 24px + 281px) !important;
+        min-width: calc(100vw - 24px + 281px) !important;
+        max-width: none !important;
+      }
+      .notice-table-standard .col-sn { width: 3.5% !important; }
+      .notice-table-standard .col-office { width: 15.5% !important; }
+      .notice-table-standard .col-category { width: 7% !important; }
+      .notice-table-standard .col-newspaper { width: 7% !important; }
+      .notice-table-standard .col-contract { width: 18.5% !important; }
+      .notice-table-standard .col-link { width: 3.5% !important; }
+      .notice-table-standard .col-bidders {
+        width: 176px !important;
+        min-width: 176px !important;
+      }
+      .notice-table-standard .col-amount {
+        width: 105px !important;
+        min-width: 105px !important;
+      }
+      .notice-table-standard .amount-value {
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+      }
+      .notice-link { font-size: 1.7em !important; }
+      .footer-text { font-size: 13px !important; }
+      .footer-title { font-size: 16px !important; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 8px !important; font-size: 8px !important; }
+      .date-line { font-size: 8px !important; line-height: 1.4 !important; }
+      .subcategory-heading { font-size: 11px !important; }
+      .notice-table { font-size: 8px !important; }
+      .notice-table th, .notice-table td {
+        font-size: 8px !important;
+        padding: 3px 1px !important;
+        line-height: 1.3 !important;
+        min-width: 0 !important;
+        hyphens: none !important;
+        word-break: normal !important;
+      }
+      .notice-link { font-size: 2em !important; }
+      .footer-text { font-size: 8px !important; }
+      .footer-title { font-size: 11px !important; }
+    }
+  </style>
+
+</head>
+<body style="margin: 0; padding: 20px; font-family: 'Poppins', Arial, sans-serif; background-color: #f9f9f9; color: #333; font-size: 14px;">
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; text-align: center;">
+    <img src="https://suchanaa.com/static/images/logo.png" alt="Suchanaa Logo" style="max-width: 220px; width: 100%; height: auto;">
+    <div class="date-line" style="font-size: 15px; color: #444; margin-top: 5px; margin-bottom: 15px; font-family: 'Poppins', Arial, sans-serif;">
+      Ashar 21, 2083 &nbsp; | &nbsp; July 05, 2026 &nbsp; | &nbsp; Sunday
+    </div>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Automotive</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Nepal Youth Foundation Nepal<br>नेपाल युथ फाउण्डेसन नेपाल</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Arthik Dainik</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction sale of vehicles</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Auction/nepal-youth-foundation-nepal-Eaxa" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Construction and Upgrading</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Swornim Hotel Ltd., Tangal, Kathmandu<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Tender</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Janasawal</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><strong>SHL/MEP-81-82/01</strong><br>MEP works of Ancillary Building at Tangal</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Tender/swornim-hotel-ltd-tangal-kathmandu-nWzm" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #ffffff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">2</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Dharan Sub-Metropolitan City<br>धरान उप-महानगरपालिका</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Quotation</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Blast Khabar</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Bagaichalinepaschimkhaharecorridormarmat karya, Dharan-9 ra Sahid ratna margama drain cover slab nirman karya, Dharan-8</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Quotation/dharan-sub-metropolitan-city-z2Ll" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Govinda road pul samrakshan tatha slab nirman karya, Dharan-7</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td></tr>
+<tr style="background-color: #ffffff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">BP Park Swandaryakaran(Interlock tile ra Railing Nirman Karya), Dharan-20</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Consulting, Research & Development</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">The Cliff Pvt. Ltd.<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Other</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Dhorpatan</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Preliminary Environmental Assessment of Proposal to Upgrade The Cliff Resort and Adventure Sports</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Other/the-cliff-pvt-ltd" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #ffffff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">2</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Shree Siddhartha Minerals Pvt. Ltd.<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Other</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Mechikali Sandesh</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Notice Regarding Initial Environmental Examination (IEE) Study Report</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Other/shree-siddhartha-minerals-pvt-ltd" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Energy & Utilities</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Nepal Doorsanchar Company Limited (NTC)<br>नेपाल दुरसञ्चार कम्पनी लिमिटेड</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Tender</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Gorkhapatra</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><strong>NDCL/PDSKT/NCB/08/082-83</strong><br>Auction Dismantled Copper cable (Scrap)</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Tender/nepal-doorsanchar-company-limited-ntc-hop9" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">General Goods & Supplies</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Civil Aviation Authority of Nepal<br>नेपाल नागिरक उड्डयन प्राधिकरण</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">OFP</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Gorkhapatra</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><strong>NCB/04/ADMIN//2082/83</strong><br>Procurement of goods, works, or services</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/OFP/civil-aviation-authority-of-nepal-5cRp" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Healthcare & Medical Supplies</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Nepal CRS Company<br>नेपाल सिआर एस कम्पनी</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Tender</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Gorkhapatra</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Supply and Delivery of Emergency Contraceptive Pills</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Tender/nepal-crs-company-26DM" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #ffffff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">2</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Dear Health Trust<br>डियर हेल्थ ट्रस्ट</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Quotation</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Nepal Samacharpatra</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><strong>Re-02-02-2082-83-SQG-DHT</strong><br>Supply, Delivery and Installation of Laboratory Equipment's</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Quotation/dear-health-trust-YfvX" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Legal & Financial Services</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Citizens Capital Limited<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Stock</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Naya Patrika</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Notice Regarding the Expiration of the Prescribed Period</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Stock/citizens-capital-limited-HHnq" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #ffffff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">2</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Citizens Bank International Limited<br>सिटिजन्स बैंक इन्टरनेसनल लिमिटेड</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Stock</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Naya Patrika</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Notice Regarding Renewal of Demat (beneficiary) Account</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Stock/citizens-bank-international-limited-F7ZN" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">3</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Asian Life Insurance Company Limited (ALICL)<br>एशियन लाईफ इन्स्योरेन्स कं. लि.</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Stock</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">News24</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Sale of Founder Shares</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Stock/asian-life-insurance-company-limited-alicl-wUCl" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Natural Resources</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Mana Kalika Saa. Wa. Wo. Sa.<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Dainik Lumbini</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction of Golia Wood</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Auction/mana-kalika-saawawosa" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #ffffff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">2</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Shree Kharkatti Saa. Wa. Wo. Sa.<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Dainik Lumbini</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction sale of Golia wood</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Auction/shree-kharkatti-saawawosa" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">3</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Shree Gadhi Saa. Wa. Wo. Sa.<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Himalaya Times</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Auction sale of firewood</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Auction/shree-gadhi-saawawosa" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Printing & Publishing</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">FORWARD Microfinance Laghubitta Bittiya Sanstha Limited<br>फरवार्ड माईक्रोफाइनान्स लघुवित्त वित्तीय संस्था लिमिटेड</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Standing List</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Nepal Samacharpatra</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Supply of Goods and Services</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Standing%20List/forward-microfinance-laghubitta-bittiya-sanstha-limited-zAMl" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 25px; margin-bottom: 10px; text-align: left;">
+    <h2 class="subcategory-heading" style="font-size: 18px; color: #1a73e8; font-weight: 600; margin: 0; padding: 8px 0; border-bottom: 2px solid #1a73e8; text-align: left; font-family: 'Poppins', Arial, sans-serif;">Stationery & Office Supplies</h2>
+  </div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box;">
+  <div class="table-scroll-wrap-normal" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <table class="notice-table notice-table-normal" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; max-width: 100%; border-collapse: collapse; background-color: #fff; font-size: 12px; table-layout: fixed; font-family: 'Poppins', Arial, sans-serif;">
+    <tr>
+    
+<th class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 5%;">S.N.</th>
+<th class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 20%;">Office Name</th>
+<th class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Category</th>
+<th class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 11%;">Newspaper</th>
+<th class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 43%;">Contract ID/Job Description</th>
+<th class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; background-color: #1a73e8; color: white; font-weight: bold; width: 10%;">Link</th>
+
+    </tr>
+<tr style="background-color: #f0f8ff;"><td class="col-sn" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">1</td><td class="col-office" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Kone Samudayik Bachat Tatha Rin Sahakari Sanstha Ltd.<br>-</td><td class="col-category" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Standing List</td><td class="col-newspaper" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Pokharapatra</td><td class="col-contract" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">Notice Regarding Vendor Enlistment</td><td class="col-link" style="font-family: 'Poppins', Arial, sans-serif;border: 1px solid #ddd; text-align: center; vertical-align: middle; padding: 5px 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><a class="notice-link" href="https://suchanaa.com/notices/Standing%20List/kone-samudayik-bachat-tatha-rin-sahakari-sanstha-ltd" style="font-size: 2em; line-height: 1; text-decoration: none;" target="_blank">&#128196;</a></td></tr>
+</table>
+</div>
+</div>
+
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 15px; margin-bottom: 5px;">
+    <div class="footer-text" style="text-align: center; font-size: 16px; font-family: 'Poppins', Arial, sans-serif; color: #1a73e8; margin-top: 30px; line-height: 1.6;">
+      <strong class="footer-title" style="font-size: 20px;">Digital Suchanaa Pvt. Ltd.</strong><br>
+      <span style="color: #444;">
+        Gwarko, Lalitpur &nbsp;|&nbsp; Phone: 9851402025, 9705402025<br>
+        Email: <a href="mailto:info@suchanaa.com" style="color: #1a73e8;">info@suchanaa.com</a> &nbsp;|&nbsp;
+        Website: <a href="https://suchanaa.com" target="_blank" style="color: #1a73e8;">https://suchanaa.com</a>
+      </span>
+    </div>
+  </div>
+  <div style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 12px; box-sizing: border-box; margin-top: 15px; margin-bottom: 5px;">
+    <div style="border-top: 1px solid #ccc; width: 100%;"></div>
+    <div class="footer-text" style="text-align: center; font-size: 13px; font-family: 'Poppins', Arial, sans-serif; color: #666; margin-top: 5px;">
+      Sent by <strong>Suchanaa</strong> | Redefining how you access local news
+    </div>
+  </div>
+</body>
+</html>
